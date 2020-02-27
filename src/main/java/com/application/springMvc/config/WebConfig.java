@@ -4,6 +4,7 @@ import com.application.springMvc.interceptor.MyInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.util.UrlPathHelper;
@@ -34,7 +35,7 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/home").setViewName("home");
+        registry.addViewController("/home").setStatusCode(HttpStatus.ACCEPTED).setViewName("home");
     }
 
     // For using @MatrixVariable
