@@ -79,7 +79,7 @@ public class MvcController {
         model.addAttribute("password", user.getPassword());
         model.addAttribute("level", user.getLevel());
 
-        return "/result1";    }
+        return "/result123";    }
 
     @RequestMapping(value = "page2", method = RequestMethod.GET)
     public String renderingPage2() {
@@ -95,7 +95,7 @@ public class MvcController {
         model.addAttribute("password", password);
         model.addAttribute("level", level);
 
-        return "/result2";    }
+        return "/result123";    }
 
     @RequestMapping(value = "page3", method = RequestMethod.GET)
     public ModelAndView renderingPage3() {
@@ -109,7 +109,7 @@ public class MvcController {
         model.addAttribute("password", user.getPassword());
         model.addAttribute("level", user.getLevel());
 
-        return "/result3";
+        return "/result123";
     }
 
     @RequestMapping(value = "page4", method = RequestMethod.GET)
