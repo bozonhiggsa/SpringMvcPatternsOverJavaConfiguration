@@ -64,7 +64,11 @@ public class MvcController {
 
     @RequestMapping(value = "page1", method = RequestMethod.GET)
     public String renderingPage1(Model model) {
-        model.addAttribute("user", new User());
+        User user = new User();
+        user.setLogin("default");
+        user.setPassword("default");
+        user.setLevel(0);
+        model.addAttribute("user", user);
         return "user1";
     }
 
