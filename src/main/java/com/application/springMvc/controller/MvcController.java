@@ -37,9 +37,6 @@ public class MvcController {
     @Autowired
     ServletContext servletContext;
 
-    /*@Autowired
-    HttpServletRequest httpRequest;*/
-
     @Autowired
     HttpSession httpSession;
 
@@ -193,7 +190,6 @@ public class MvcController {
 
     @RequestMapping(value = "/employeesContacts/{contactNumber}",
             method = RequestMethod.GET)
-    @ResponseBody
     public ResponseEntity<List<Employee>> getEmployeeByContactNumber(
             @MatrixVariable(required = true) String contactNumber) {
         List<Employee> employeesList = new ArrayList<Employee>();
@@ -203,7 +199,6 @@ public class MvcController {
 
     @RequestMapping(value = "/employee/{name}",
             method = RequestMethod.GET)
-    @ResponseBody
     public ResponseEntity<List<Employee>> getEmployeeByNameAndContactNumber(
             @PathVariable String name,
             @MatrixVariable String contactNumber) {
@@ -214,7 +209,6 @@ public class MvcController {
 
     @RequestMapping(value = "/companyEmployee/{company}/employeeData/{employee}",
             method = RequestMethod.GET)
-    @ResponseBody
     public ResponseEntity<Map<String, String>> getEmployeeAndCompany(
             @MatrixVariable(pathVar = "company") Map<String, String> company,
             @MatrixVariable(pathVar = "employee") Map<String, String> employee) {
@@ -228,7 +222,6 @@ public class MvcController {
 
         if(true){
             throw new IOException();
-
         }
         return "index";
     }
