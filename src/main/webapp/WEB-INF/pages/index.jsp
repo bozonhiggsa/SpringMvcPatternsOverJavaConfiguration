@@ -29,7 +29,9 @@
 <br>
 <h4><a href="/companyEmployee/companyId=2;companyName=xSolution/employeeData/id=15;name=Garik;contactNumber=22">Example @MatrixVariable</a></h4>
 <br>
-<h4><a href="/exceptionHandler">Exceptionj Handler</a></h4>
+<h4><a href="/exceptionHandler1">Exception Handler 1</a></h4>
+<h4><a href="/exceptionHandler2">Exception Handler 2</a></h4>
+<h4><a href="/exceptionHandler3">Exception Handler 3</a></h4>
 
 </body>
 </html>

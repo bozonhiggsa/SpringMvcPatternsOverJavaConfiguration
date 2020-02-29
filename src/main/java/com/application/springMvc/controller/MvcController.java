@@ -1,5 +1,8 @@
 package com.application.springMvc.controller;
 
+import com.application.springMvc.exceptions.CustomException1;
+import com.application.springMvc.exceptions.CustomException2;
+import com.application.springMvc.exceptions.CustomException3;
 import com.application.springMvc.model.Employee;
 import com.application.springMvc.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +22,6 @@ import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
 import java.net.URI;
 import java.util.*;
 
@@ -217,11 +219,29 @@ public class MvcController {
         return new ResponseEntity<Map<String, String>>(map, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/exceptionHandler", method = RequestMethod.GET)
-    public String exceptionHandlingExample() throws IOException {
+    @RequestMapping(value = "/exceptionHandler1", method = RequestMethod.GET)
+    public String exceptionHandlingExample1() throws CustomException1 {
 
         if(true){
-            throw new IOException();
+            throw new CustomException1();
+        }
+        return "index";
+    }
+
+    @RequestMapping(value = "/exceptionHandler2", method = RequestMethod.GET)
+    public String exceptionHandlingExample2() throws CustomException2 {
+
+        if(true){
+            throw new CustomException2();
+        }
+        return "index";
+    }
+
+    @RequestMapping(value = "/exceptionHandler3", method = RequestMethod.GET)
+    public String exceptionHandlingExample3() throws CustomException3 {
+
+        if(true){
+            throw new CustomException3();
         }
         return "index";
     }
