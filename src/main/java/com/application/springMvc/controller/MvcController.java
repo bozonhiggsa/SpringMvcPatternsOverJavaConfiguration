@@ -1,8 +1,6 @@
 package com.application.springMvc.controller;
 
-import com.application.springMvc.exceptions.CustomException1;
-import com.application.springMvc.exceptions.CustomException2;
-import com.application.springMvc.exceptions.CustomException3;
+import com.application.springMvc.exceptions.*;
 import com.application.springMvc.model.Employee;
 import com.application.springMvc.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -242,6 +240,15 @@ public class MvcController {
 
         if(true){
             throw new CustomException3();
+        }
+        return "index";
+    }
+
+    @RequestMapping(value = "/exceptionHandler4", method = RequestMethod.GET)
+    public String exceptionHandlingExample4() throws ResourceNotFoundException {
+
+        if(true){
+            throw new ResourceNotFoundException();
         }
         return "index";
     }

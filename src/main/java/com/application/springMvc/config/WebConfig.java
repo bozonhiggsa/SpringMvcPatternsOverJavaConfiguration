@@ -1,10 +1,12 @@
 package com.application.springMvc.config;
 
+import com.application.springMvc.controller.CustomHandlerExceptionResolver;
 import com.application.springMvc.interceptor.MyInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.util.UrlPathHelper;
@@ -44,5 +46,11 @@ public class WebConfig implements WebMvcConfigurer {
         urlPathHelper.setRemoveSemicolonContent(false);
         configurer.setUrlPathHelper(urlPathHelper);
     }
+
+    @Bean
+    HandlerExceptionResolver customExceptionResolver () {
+        return new CustomHandlerExceptionResolver();
+    }
+
 
 }
