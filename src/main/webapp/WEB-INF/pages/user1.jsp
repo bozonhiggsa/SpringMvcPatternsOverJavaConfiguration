@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<h4>${session_attribute.companyName}</h4>
+<br>
 <h2>Enter User1 information</h2>
 <form:form action="${pageContext.servletContext.contextPath}/addUser1">
   <table>

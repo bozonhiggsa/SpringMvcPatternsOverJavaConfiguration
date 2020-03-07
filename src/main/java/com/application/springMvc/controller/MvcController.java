@@ -1,6 +1,7 @@
 package com.application.springMvc.controller;
 
 import com.application.springMvc.exceptions.*;
+import com.application.springMvc.model.Company;
 import com.application.springMvc.model.Employee;
 import com.application.springMvc.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,7 @@ import java.util.*;
  * @author Ihor Savchenko
  * @version 1.0
  */
+@SessionAttributes("session_attribute")
 @Controller
 public class MvcController {
 
@@ -46,7 +48,10 @@ public class MvcController {
     }
 
     @RequestMapping(value = "/reference/{ref}")
-    public String choosePage(@PathVariable("ref") int ref){
+    public String choosePage(@PathVariable("ref") int ref, Model model){
+        Company company = new Company();
+        company.setCompanyName("Company name");
+        model.addAttribute("session_attribute", company);
         if(ref == 1){
             return "redirect:/page1";
         } else if(ref == 2){
